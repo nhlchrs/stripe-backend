@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Hero = () => {
     return (
         <section id="hero" className="d-flex align-items-center">
@@ -5,7 +7,7 @@ const Hero = () => {
             <h1>Best products & brands <br/><span>In our store</span></h1>
             <h2>Trendy Products, Factory Prices, Excellent Service</h2>
             <div className="d-flex">
-               <a href="product-page.html" className="btn-get-started scrollto">View Products</a>
+               <Link to="/products" className="btn-get-started scrollto">View Products</Link>
             </div>
          </div>
       </section>
