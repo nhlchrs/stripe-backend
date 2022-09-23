@@ -3,7 +3,7 @@ import Product from "../../components/product";
 import { clientProducts } from "../../dummyData/product";
 import { useParams } from "react-router-dom";
 
-const Products = () => {
+const Home = () => {
     const params = useParams();
     const { client } = params;
 
@@ -30,4 +30,4 @@ const Products = () => {
     )
 }
 
-export default Products;
+export default Home;
