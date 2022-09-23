@@ -8,7 +8,18 @@ const Checkout = () => {
     const { client, product_id } = params;
 
     return (
-        <LayoutWithoutHero>
+        <LayoutWithoutHero breadcrumb={{
+            pageTitle: "Checkout Page",
+            links: [
+                {
+                    link: "/",
+                    title: "Home"
+                },
+                {
+                    title: "Checkout"
+                }
+            ]
+        }}>
             <section id="contact" className="contact">
                 <div className="container aos-init aos-animate" data-aos="fade-up">
                     <div className="section-title">

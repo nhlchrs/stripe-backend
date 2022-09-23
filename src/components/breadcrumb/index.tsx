@@ -1,16 +1,26 @@
+import { BreadcrumbLinkType, BreadcrumbType } from '../../types/breadcrumd.type';
+
 import { Link } from 'react-router-dom'
 
-const Breadcrumb = () => {
+type Props = {
+    breadcrumb: BreadcrumbType
+}
+
+const Breadcrumb = ({breadcrumb}: Props ) => {
     return (
         <section className="breadcrumbs">
             <div className="container">
 
                 <div className="d-flex justify-content-between align-items-center">
-                    <h2>Checkout Page</h2>
+                    <h2>{breadcrumb.pageTitle}</h2>
                     <ol>
-                        <li>
-                            <Link to="/">Home</Link></li>
-                        <li>Checkout</li>
+                        {
+                            breadcrumb.links.map((item: BreadcrumbLinkType) => (
+                                <li>
+                                    { !!item.link ? <Link to={item.link}>{item.title}</Link> : item.title }
+                                </li>
+                            ))
+                        }
                     </ol>
                 </div>
 
