@@ -2,18 +2,20 @@ import './App.css';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import Layout from './layout';
-import Products from '@pages/products';
+import Checkout from './pages/checkout';
+import Clients from './pages/clients';
+import Products from './pages/products';
 
 function App() {
   return (
-    <Layout>
-      <BrowserRouter>
+    <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Products />} />
+          <Route path="/" element={<Clients />} />
+          <Route path="/:client" element={<Products />} />
+          <Route path="checkout/:client/:product_id" element={<Checkout />} />
         </Routes>
-      </BrowserRouter>
-    </Layout>
+    </BrowserRouter>
+
   );
 }
 
