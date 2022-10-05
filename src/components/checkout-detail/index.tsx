@@ -1,11 +1,28 @@
 import { CheckoutDetailType } from "../../types/checkout-detail.type";
 import { clientProducts } from "../../dummyData/product";
+import { useEffect, useState } from "react";
+import StripeCheckoutForm from "../stripe-payment";
+import Layout from "../stripe-payment/Layout";
 
-const CheckoutDetail = ({client, product_id}: CheckoutDetailType) => {
+const CheckoutDetail = ({ client, product_id }: CheckoutDetailType) => {
+    const [isShown, setIsShown] = useState(false);
+    const [stripe_account_id, setStripe_account_id] = useState<string | undefined>("");
+    const [price, setPrice] = useState<number | undefined>(0);
+
     let product = clientProducts[client as string].find(product => product.id === product_id);
-    
+
+    useEffect(() => {
+        if (product) {
+            setStripe_account_id(product?.stripe_account_id)
+            setPrice(product?.price)
+        }
+    }, [stripe_account_id])
+
+    const handleClick = () => {
+        setIsShown(current => !current);
+    }
     return (
-        <form action="#" method="post" className="php-email-form">
+        <div className="php-email-form">
             <div className="row aos-init mb-4 aos-animate" data-aos="fade-up" data-aos-delay="100">
                 <div className="col-lg-8 col-md-6 border-bottom">
                     <div className="info-box">
@@ -56,26 +73,33 @@ const CheckoutDetail = ({client, product_id}: CheckoutDetailType) => {
                         <li>
                             <div className="radio-option">
                                 <input type="radio" name="payment-group" id="payment-1" />
-                                    <label htmlFor="payment-1">Check Payments</label>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="radio-option">
-                                <input type="radio" name="payment-group" id="payment-1"/>
-                                    <label htmlFor="payment-1">Cash On Delivery</label>
+                                <label htmlFor="payment-1">Check Payments</label>
                             </div>
                         </li>
                         <li>
                             <div className="radio-option">
                                 <input type="radio" name="payment-group" id="payment-1" />
-                                    <label htmlFor="payment-1">Stripe</label>
+                                <label htmlFor="payment-1">Cash On Delivery</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="radio-option">
+                                <input type="radio" name="payment-group" id="payment-1" />
+                                <label htmlFor="payment-1">Stripe</label>
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div className="text-center mb-3"><button type="button" className="btn btn-primary">Place Order</button></div>
-        </form>
+            {!isShown && (
+                <div className="text-center mb-3"><button type="button" className="btn btn-primary" onClick={handleClick}>Place Order</button></div>
+            )}
+            {isShown && (
+                <div>
+                    <Layout {...{ stripe_account_id, price }} />
+                </div>
+            )}
+        </div>
     )
 }
 

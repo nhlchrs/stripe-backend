@@ -6,59 +6,68 @@ export const clientProducts: Record<string, ProductType[]> = {
             "id": "1",
             "image": "assets/img/portfolio/1.jpg",
             "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 1",
-            "client": "client1"
+            "title": "GoPro HERO6 4K Action Camera - Nihal",
+            "client": "client1",
+            "stripe_account_id": "acct_1LpRdGSByM2Xro2v"
         },
         {
             "id": "2",
             "image": "assets/img/portfolio/2.jpg",
-            "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 1",
-            "client": "client1"
+            "price": 710.50,
+            "title": "GoPro HERO6 4K Action Camera - Nihal",
+            "client": "client1",
+            "stripe_account_id": "acct_1LpRdGSByM2Xro2v"
+
         },
         {
             "id": "3",
             "image": "assets/img/portfolio/3.jpg",
-            "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 1",
-            "client": "client1"
+            "price": 700,
+            "title": "GoPro HERO6 4K Action Camera - Nihal",
+            "client": "client1",
+            "stripe_account_id": "acct_1JXgVASCAbofgHz8"
         },
         {
             "id": "4",
             "image": "assets/img/portfolio/4.jpg",
-            "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 1",
-            "client": "client1"
+            "price": 70.50,
+            "title": "GoPro HERO6 4K Action Camera - Nihal",
+            "client": "client1",
+            "stripe_account_id": "acct_1JXgVASCAbofgHz8"
         }
     ],
     "client2": [
         {
             "id": "5",
             "image": "assets/img/portfolio/1.jpg",
-            "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 2",
-            "client": "client2"
+            "price": 730.50,
+            "title": "GoPro HERO6 4K Action Camera - Amit",
+            "client": "client2",
+            "stripe_account_id": "acct_1Lp8IkKMlJpt9pDH"
         },
         {
             "id": "6",
             "image": "assets/img/portfolio/2.jpg",
-            "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 2",
-            "client": "client2"
+            "price": 290.50,
+            "title": "GoPro HERO6 4K Action Camera - Amit",
+            "client": "client2",
+            "stripe_account_id": "acct_1Lp8IkKMlJpt9pDH"
         },
         {
             "id": "7",
             "image": "assets/img/portfolio/3.jpg",
-            "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 2",
-            "client": "client2"
+            "price": 190.50,
+            "title": "GoPro HERO6 4K Action Camera - Amit",
+            "client": "client2",
+            "stripe_account_id": "acct_1Lp8IkKMlJpt9pDH"
         },
         {
             "id": "8",
             "image": "assets/img/portfolio/4.jpg",
-            "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 2",
-            "client": "client2"
+            "price": 89.50,
+            "title": "GoPro HERO6 4K Action Camera - Amit",
+            "client": "client2",
+            "stripe_account_id": "acct_1Lp8IkKMlJpt9pDH"
         }
     ],
     "client3": [
@@ -66,29 +75,33 @@ export const clientProducts: Record<string, ProductType[]> = {
             "id": "9",
             "image": "assets/img/portfolio/1.jpg",
             "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 3",
-            "client": "client3"
+            "title": "GoPro HERO6 4K Action Camera - Prince",
+            "client": "client3",
+            "stripe_account_id": "acct_1Lp8I5HE1FG9a05c"
         },
         {
             "id": "10",
             "image": "assets/img/portfolio/2.jpg",
-            "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 3",
-            "client": "client3"
+            "price": 90.50,
+            "title": "GoPro HERO6 4K Action Camera - Prince",
+            "client": "client3",
+            "stripe_account_id": "acct_1Lp8I5HE1FG9a05c"
         },
         {
             "id": "11",
             "image": "assets/img/portfolio/3.jpg",
-            "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 3",
-            "client": "client3"
+            "price": 770.50,
+            "title": "GoPro HERO6 4K Action Camera - Prince",
+            "client": "client3",
+            "stripe_account_id": "acct_1Lp8I5HE1FG9a05c"
         },
         {
             "id": "12",
             "image": "assets/img/portfolio/4.jpg",
-            "price": 790.50,
-            "title": "GoPro HERO6 4K Action Camera - Client 3",
-            "client": "client3"
+            "price": 7900,
+            "title": "GoPro HERO6 4K Action Camera - Prince",
+            "client": "client3",
+            "stripe_account_id": "acct_1Lp8I5HE1FG9a05c"
         }
     ]
 }

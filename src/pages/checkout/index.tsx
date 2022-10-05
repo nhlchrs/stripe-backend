@@ -30,7 +30,7 @@ const Checkout = () => {
                             <CheckoutForm></CheckoutForm>
                         </div>
                         <div className="col-lg-6">
-                            <CheckoutDetail {...{client, product_id}}></CheckoutDetail>
+                            <CheckoutDetail {...{ client, product_id }}></CheckoutDetail>
                         </div>
                     </div>
                 </div>

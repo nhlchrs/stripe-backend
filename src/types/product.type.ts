@@ -4,4 +4,5 @@ export type ProductType = {
     price: number;
     title: string;
     client: string;
+    stripe_account_id: string;
 };
