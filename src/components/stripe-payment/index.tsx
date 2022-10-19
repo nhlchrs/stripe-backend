@@ -5,12 +5,15 @@ import {
     useStripe,
     useElements,
 } from '@stripe/react-stripe-js';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const StripeCheckoutForm = (props: any) => {
+const StripeCheckoutForm = ({ client_secret }: any) => {
+    const navigate = useNavigate();
+    const location = useLocation();
     const stripe = useStripe();
     const elements = useElements();
-    const [message, setMessage] = useState<any | null>(null);
-    const [isProcessing, setIsProcessing] = useState<any | null>(false);
+    const [message, setMessage] = useState<string | undefined | null>(null);
+    const [isProcessing, setIsProcessing] = useState<boolean | undefined>(false);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -29,13 +32,14 @@ const StripeCheckoutForm = (props: any) => {
         else {
             setIsProcessing(true)
             await stripe
-                .confirmCardPayment(props.client_secret, {
+                .confirmCardPayment(location.state !== null ? location?.state?.client_secret : client_secret, {
                     payment_method: {
                         card: elements.getElement(CardElement)!,
                         billing_details: {
                             name: 'Nihal Chaurasia',
                         },
                     },
+                    setup_future_usage: 'off_session',
                 })
                 .then(function (result) {
                     console.log(result, "Resulttt");
@@ -45,6 +49,7 @@ const StripeCheckoutForm = (props: any) => {
                         return;
                     }
                     setMessage("Payment Successfull!")
+                    navigate("/success");
                 }).catch(err => console.log(err.message));
         }
     };

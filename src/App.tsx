@@ -10,6 +10,8 @@ import Products from './pages/products';
 // import Layout from './components/stripe-payment/Layout';
 import Success from './pages/success';
 import Register from './pages/register';
+import Subscription from './pages/subscription';
+import StripeCheckoutForm from './components/stripe-payment';
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
         <Route path="/products" element={<ProductList />} />
         {/* <Route path="/stripe" element={<Layout />} /> */}
         <Route path="/success" element={<Success />} />
+        <Route path="/subscription" element={<Subscription />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/suscribe" element={<StripeCheckoutForm />} />
         <Route path="checkout/:client/:product_id" element={<Checkout />} />
       </Routes>
     </BrowserRouter>

@@ -8,7 +8,12 @@ const Header = () => {
             <h1 className="logo"><Link to="/">Site Logo<span>.</span></Link></h1>
             <nav id="navbar" className="navbar">
                <ul>
-                  <Link to="/register"><span>Vendor Registration</span> </Link>
+                  <li>
+                     <Link to="/register"><span>Vendor Registration</span> </Link>
+                  </li>
+                  <li>
+                     <Link to="/subscription"><span>Subscription Plans</span> </Link>
+                  </li>
                   <li className="dropdown">
                      <Link to="/"><span>Client</span> <i className="bi bi-chevron-down"></i></Link>
                      <ul>
